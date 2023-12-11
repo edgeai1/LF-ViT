@@ -42,33 +42,33 @@ ImageNet
 ## Evaluate Pre-trained Models
 - Get accuracy of each stage
 ```
-CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 0 --data_url PATH_TO_IMAGENET  --batch_size 64 --model cf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
+CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 0 --data_url PATH_TO_IMAGENET  --batch_size 64 --model lf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
 
 ```
 
 - Infer the model on the validation set with various threshold([0.01:1:0.01])
 ```
-CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 1 --data_url PATH_TO_IMAGENET  --batch_size 64 --model cf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
+CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 1 --data_url PATH_TO_IMAGENET  --batch_size 64 --model lf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
 
 ```
 
 - Infer the model on the validation set with one threshold and meature the throughput
 
 ```
-CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 2 --data_url PATH_TO_IMAGENET  --batch_size 1024 --model cf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} --threshold THRESHOLD
+CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 2 --data_url PATH_TO_IMAGENET  --batch_size 1024 --model lf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} --threshold THRESHOLD
 
 ```
 
 - Read the evaluation results saved in pre-trained models
 ```
-CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 3 --data_url PATH_TO_IMAGENET  --batch_size 64 --model cf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
+CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 3 --data_url PATH_TO_IMAGENET  --batch_size 64 --model lf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
 
 ```
 
 ## Train
 - Train LF-ViT on ImageNet 
 ```
-python -m torch.distributed.launch --use_env --nproc_per_node=4 main_deit.py  --model cf_deit_small --batch-size 256 --data-path PATH_TO_IMAGENET --location-stage-size {7,9} --dist-eval --output PATH_TO_LOG
+python -m torch.distributed.launch --use_env --nproc_per_node=4 main_deit.py  --model lf_deit_small --batch-size 256 --data-path PATH_TO_IMAGENET --location-stage-size {7,9} --dist-eval --output PATH_TO_LOG
 
 ```
 
@@ -78,7 +78,7 @@ python -m torch.distributed.launch --use_env --nproc_per_node=4 main_deit.py  --
 - Visualization of images correctly classified at location stage and focus stage.
 
 ```
-python visualize.py --model cf_deit_small --resume  PATH_TO_CHECKPOINT --output_dir PATH_TP_SAVE --data-path PATH_TO_IMAGENET --batch-size 64 
+python visualize.py --model lf_deit_small --resume  PATH_TO_CHECKPOINT --output_dir PATH_TP_SAVE --data-path PATH_TO_IMAGENET --batch-size 64 
 
 ```
 
