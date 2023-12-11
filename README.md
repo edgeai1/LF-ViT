@@ -81,3 +81,8 @@ python -m torch.distributed.launch --use_env --nproc_per_node=4 main_deit.py  --
 python visualize.py --model cf_deit_small --resume  PATH_TO_CHECKPOINT --output_dir PATH_TP_SAVE --data-path PATH_TO_IMAGENET --batch-size 64 
 
 ```
+
+
+## Acknowledgment
+Our code of DeiT is from [here](https://github.com/facebookresearch/deitzhe). The visualization code is modified from [Evo-ViT](https://github.com/YifanXu74/Evo-ViT). The dynamic inference with early-exit code is modified from [DVT](https://github.com/blackfeather-wang/Dynamic-Vision-Transformer). Thanks to these authors. 
+
