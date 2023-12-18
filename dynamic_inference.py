@@ -21,7 +21,7 @@ import pdb
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-parser = argparse.ArgumentParser(description='Inference code for CFViT')
+parser = argparse.ArgumentParser(description='Inference code for LFViT')
 
 parser.add_argument('--data_url', default='./data', type=str,
                     help='path to the dataset (ImageNet)')
@@ -97,7 +97,7 @@ def main():
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                         std=[0.229, 0.224, 0.225])
 
-    crop_pac_dict = {'cf_deit_small':0.875, 'cf_lvvit_small':0.9}
+    crop_pac_dict = {'lf_deit_small':0.875, 'lf_lvvit_small':0.9}
     crop_pac = crop_pac_dict[args.model]
 
     val_loader = torch.utils.data.DataLoader(
