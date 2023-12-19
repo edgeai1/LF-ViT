@@ -290,6 +290,8 @@ class LFVisionTransformer(nn.Module):
 
         cls_attn = global_attention[no_exit].mean(dim=1)[:, 0, 1:]
 
+        if cls_attn.shape[0] == 0:
+            return location_result, location_num, focus_num
         important_index, unimportan_tokens = block_information(cls_attn, embedding_x1[no_exit], self.alpha, self.region_size, self.image_size)
 
         self.important_index = important_index
