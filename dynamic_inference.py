@@ -57,17 +57,7 @@ def main():
     args.input_size = max(args.input_size_list)
 
     checkpoint = torch.load(args.checkpoint_path)
-
-    # flops = [1.101957888, 3.810416256]
-    # flops = checkpoint['flops']
-    # flops = [1.101957888, 4.521303936]
-    flops = [1.831336704, 6.102855552]
-    del checkpoint['optimizer']
-    del checkpoint['lr_scheduler']
-    del checkpoint['epoch']
-    del checkpoint['model_ema']
-    del checkpoint['args']
-    del checkpoint['scaler']
+    flops = checkpoint['flops']
 
     if args.eval_mode == 3:
         anytime_classification = checkpoint['anytime_classification']
