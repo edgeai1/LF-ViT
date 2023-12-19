@@ -368,10 +368,17 @@ def block_information(batch_cls_attn, x, alpha, region_size, image_size=224, pat
         regions_scores.append(batch_cls_attn[:, block].sum(dim=1))
 
     policy_indices = torch.argsort(torch.stack(regions_scores, dim=1), dim=1, descending=True)[:, :1]
-    # Important tokens in the original image
-    important_indices = information_blocks[policy_indices.squeeze()]
-    # Unimportant tokens in the original image
-    unimportant_indices = uninformation_blocks[policy_indices.squeeze()]
+
+    if policy_indices.shape[0] == 1:
+        # Important tokens in the original image
+        important_indices = information_blocks[policy_indices.squeeze()].unsqueeze(0)
+        # Unimportant tokens in the original image
+        unimportant_indices = uninformation_blocks[policy_indices.squeeze()].unsqueeze(0)
+    else:
+        # Important tokens in the original image
+        important_indices = information_blocks[policy_indices.squeeze()]
+        # Unimportant tokens in the original image
+        unimportant_indices = uninformation_blocks[policy_indices.squeeze()]
 
     import_token_num = int(math.ceil(region_size * region_size * alpha))
     important_tokens = batch_index_select(x, important_indices + 1)
