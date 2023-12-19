@@ -24,9 +24,7 @@ from torchvision import transforms
 
 from PIL import Image
 import os
-from deit import models_deit as cf_deit_small
-# from deit import models_deit as cf_deit_small
-# import pdb
+from deit import models_deit as lf_deit_small
 import torch.nn.functional as F
 import torch.nn as nn
 
