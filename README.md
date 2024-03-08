@@ -23,10 +23,6 @@ This is Pytorch implementation of our paper "LF-ViT: Reducing Spatial Redundancy
 
 ## Pre-trained Models
 
-| Backbone | # of Location Stage | Accuracy	                | Checkpoints Google Links | Checkpoints Baidu Links                                                 |
-|--- |---------------------|--------------------------|--------------------------|-------------------------------------------------------------------------|
-| Deit-S   | 7x7                 | 80.8(m=5,threshold=0.76) | [Google Drive ](https://drive.google.com/file/d/1Pb9xgZ46orJ3C-D5MD0i1cLzd-EqTvzv/view?usp=sharing)        | [Baidu Drive ](https://pan.baidu.com/s/1u2mJ05NSNJxJ6IJJkU--eg)  (v435) |
-| Deit-S   | 9x9                 | 82.2(m=8,threshold=0.75) | [Google Drive ](https://drive.google.com/file/d/1d94vVUqHSA1taqFqd_2xnwM964P2YCzL/view?usp=sharing)        | [Baidu Drive ](https://pan.baidu.com/s/1QB30WmG1rG2uKiW5aRYsxA)  (b69i) |
 
 - What are contained in the checkpoints:
 
