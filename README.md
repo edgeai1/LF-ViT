@@ -85,7 +85,7 @@ python visualize.py --model lf_deit_small --resume  PATH_TO_CHECKPOINT --output_
 @inproceedings{LFViT, 
 title={LF-ViT: Reducing Spatial Redundancy in Vision Transformer for Efficient Image Recognition}, 
 volume={38}, 
-author={Hu, Youbing and Cheng, Yun and Lu, Anqi and Cao, Zhiqiang and Wei, Dawei and Liu, Jie and Li, Zhijun}, 
+author={Youbing Hu and Yun Cheng and Anqi Lu and Zhiqiang Cao and Dawei Wei and Jie Liu and Zhijun Li}, 
 booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
 year={2024}, 
 pages={2274-2284} 
