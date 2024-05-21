@@ -42,7 +42,7 @@ ImageNet
 ## Evaluate Pre-trained Models
 - Get accuracy of each stage
 ```
-CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 0 --data_url PATH_TO_IMAGENET  --batch_size 64 --model l_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
+CUDA_VISIBLE_DEVICES=0 python dynamic_inference.py --eval-mode 0 --data_url PATH_TO_IMAGENET  --batch_size 64 --model lf_deit_small --checkpoint_path PATH_TO_CHECKPOINT  --location-stage-size {7,9} 
 
 ```
 
@@ -79,4 +79,15 @@ python -m torch.distributed.launch --use_env --nproc_per_node=4 main_deit.py  --
 ```
 python visualize.py --model lf_deit_small --resume  PATH_TO_CHECKPOINT --output_dir PATH_TP_SAVE --data-path PATH_TO_IMAGENET --batch-size 64 
 
+```
+## Citation
+```
+@inproceedings{LFViT, 
+title={LF-ViT: Reducing Spatial Redundancy in Vision Transformer for Efficient Image Recognition}, 
+volume={38}, 
+author={Hu, Youbing and Cheng, Yun and Lu, Anqi and Cao, Zhiqiang and Wei, Dawei and Liu, Jie and Li, Zhijun}, 
+booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+year={2024}, 
+pages={2274-2284} 
+}
 ```
