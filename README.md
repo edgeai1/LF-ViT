@@ -91,3 +91,8 @@ year={2024},
 pages={2274-2284} 
 }
 ```
+
+
+## Acknowledgment
+Our code of DeiT is from [here](https://github.com/facebookresearch/deitzhe). The visualization code is modified from [Evo-ViT](https://github.com/YifanXu74/Evo-ViT). The dynamic inference with early-exit code is modified from [DVT](https://github.com/blackfeather-wang/Dynamic-Vision-Transformer). Thanks to these authors. 
+
