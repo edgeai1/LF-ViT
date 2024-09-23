@@ -28,7 +28,7 @@ warnings.filterwarnings('ignore')
 def get_args_parser():
     parser = argparse.ArgumentParser('DeiT training and evaluation script', add_help=False)
     parser.add_argument('--batch-size', default=256, type=int)
-    parser.add_argument('--epochs', default=500, type=int)
+    parser.add_argument('--epochs', default=300, type=int)
 
     # Model parameters
     parser.add_argument('--model', default='deit_base_patch4_64', type=str, metavar='MODEL',
@@ -46,7 +46,7 @@ def get_args_parser():
     parser.add_argument('--model-ema-decay', type=float, default=0.99996, help='')
     parser.add_argument('--model-ema-force-cpu', action='store_true', default=False, help='')
 
-    # Optimizer parameters
+FFF    # Optimizer parameters
     parser.add_argument('--opt', default='adamw', type=str, metavar='OPTIMIZER',
                         help='Optimizer (default: "adamw"')
     parser.add_argument('--opt-eps', default=1e-8, type=float, metavar='EPSILON',
